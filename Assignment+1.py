@@ -6,7 +6,6 @@ def answer_one():
     import numpy as np
     import pandas as pd
     from sklearn.datasets import load_breast_cancer
-    from sklearn.model_selection import train_test_split
     cancer = load_breast_cancer()
     cancer.keys()
     data = np.c_[cancer.data, cancer.target]
@@ -23,7 +22,6 @@ answer_one()
 def answer_two():
     import numpy as np
     import pandas as pd
-    from sklearn.model_selection import train_test_split
     DF = answer_one()
     Targetdict = {0 : "malignant", 1: "benign"}
     Target = pd.Series(DF["target"].astype(int))
@@ -39,7 +37,6 @@ answer_two()
 def answer_three():
     import numpy as np
     import pandas as pd
-    from sklearn.model_selection import train_test_split
     DF = answer_one()
     X = DF.loc[:, "mean radius":"worst fractal dimension"]
     y = DF["target"]
